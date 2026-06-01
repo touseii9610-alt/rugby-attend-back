@@ -22,4 +22,7 @@ public class User {
     private String displayName;
 
     private String role;
+
+    private String lineUserId;
+    private String pictureUrl;
 }
