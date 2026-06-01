@@ -21,7 +21,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = { "http://localhost:5173",
+        "https://rugby-attend-front.vercel.app" })
 @RestController
 @RequiredArgsConstructor
 public class EventController {

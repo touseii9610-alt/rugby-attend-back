@@ -2,6 +2,7 @@ package com.rugby.attend.controller;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,6 +11,8 @@ import com.rugby.attend.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
+@CrossOrigin(origins = { "http://localhost:5173",
+        "https://rugby-attend-front.vercel.app" })
 @RestController
 @RequiredArgsConstructor
 public class UserController {

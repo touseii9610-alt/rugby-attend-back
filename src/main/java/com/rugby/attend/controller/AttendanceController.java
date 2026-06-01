@@ -16,7 +16,8 @@ import com.rugby.attend.repository.EventRepository;
 
 import lombok.RequiredArgsConstructor;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = { "http://localhost:5173",
+        "https://rugby-attend-front.vercel.app" })
 @RestController
 @RequiredArgsConstructor
 public class AttendanceController {
