@@ -8,15 +8,19 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.rugby.attend.entity.Attendance;
 
 public interface AttendanceRepository
-        extends JpaRepository<Attendance, Long> {
+                extends JpaRepository<Attendance, Long> {
 
-    List<Attendance> findByEventId(Long eventId);
+        List<Attendance> findByEventId(Long eventId);
 
-    Optional<Attendance> findByEventIdAndUserName(
-            Long eventId,
-            String userName);
+        Optional<Attendance> findByEventIdAndUserName(
+                        Long eventId,
+                        String userName);
 
-    long countByEventIdAndStatus(Long eventId, String status);
+        long countByEventIdAndStatus(Long eventId, String status);
 
-    void deleteByEventId(Long eventId);
+        void deleteByEventId(Long eventId);
+
+        List<Attendance> findByUserNameAndStatus(
+                        String userName,
+                        String status);
 }
