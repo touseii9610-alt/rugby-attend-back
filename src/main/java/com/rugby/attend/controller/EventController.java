@@ -38,9 +38,9 @@ public class EventController {
                                 .map(event -> new EventResponse(
                                                 event.getId(),
                                                 event.getTitle(),
-                                                event.getEventDate(),
-                                                event.getStartTime(),
-                                                event.getEndTime(),
+                                                event.getStartDateTime(),
+                                                event.getEndDateTime(),
+                                                event.getIsAllDay(),
                                                 event.getLocation(),
                                                 event.getEventType(),
                                                 attendanceRepository.countByEventIdAndStatus(event.getId(), "ATTEND"),
@@ -65,9 +65,9 @@ public class EventController {
                 Event event = eventRepository.findById(id).orElseThrow();
 
                 event.setTitle(request.getTitle());
-                event.setEventDate(request.getEventDate());
-                event.setStartTime(request.getStartTime());
-                event.setEndTime(request.getEndTime());
+                event.setStartDateTime(request.getStartDateTime());
+                event.setEndDateTime(request.getEndDateTime());
+                event.setIsAllDay(request.getIsAllDay());
                 event.setLocation(request.getLocation());
                 event.setEventType(request.getEventType());
 

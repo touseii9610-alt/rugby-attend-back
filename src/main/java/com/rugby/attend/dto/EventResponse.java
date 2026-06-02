@@ -1,7 +1,6 @@
 package com.rugby.attend.dto;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,9 +11,9 @@ public class EventResponse {
 
     private Long id;
     private String title;
-    private LocalDate eventDate;
-    private LocalTime startTime;
-    private LocalTime endTime;
+    private LocalDateTime startDateTime;
+    private LocalDateTime endDateTime;
+    private Boolean isAllDay;
     private String location;
     private String eventType;
 

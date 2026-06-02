@@ -1,7 +1,6 @@
 package com.rugby.attend.entity;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,12 +22,11 @@ public class Event {
 
     private String title;
 
-    private LocalDate eventDate;
+    private LocalDateTime startDateTime;
 
-    private LocalTime startTime;
+    private LocalDateTime endDateTime;
 
-    private LocalTime endTime;
-
+    private Boolean isAllDay;
     private String location;
 
     private String eventType;

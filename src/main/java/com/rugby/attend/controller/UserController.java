@@ -74,8 +74,8 @@ public class UserController {
                 .stream()
                 .map(attendance -> eventRepository.findById(attendance.getEventId()))
                 .flatMap(Optional::stream)
-                .filter(event -> !event.getEventDate().isBefore(LocalDate.now()))
-                .sorted(Comparator.comparing(Event::getEventDate))
+                .filter(event -> !event.getStartDateTime().toLocalDate().isBefore(LocalDate.now()))
+                .sorted(Comparator.comparing(Event::getStartDateTime))
                 .toList();
     }
 }

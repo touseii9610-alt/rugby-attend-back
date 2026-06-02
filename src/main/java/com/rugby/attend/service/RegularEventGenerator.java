@@ -2,6 +2,7 @@ package com.rugby.attend.service;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 import org.springframework.boot.CommandLineRunner;
@@ -35,8 +36,11 @@ public class RegularEventGenerator implements CommandLineRunner {
     }
 
     private void createRegularEventIfNotExists(LocalDate date) {
-        boolean exists = eventRepository.existsByEventDateAndEventType(
-                date,
+        LocalDateTime startDateTime = date.atTime(9, 0);
+        LocalDateTime endDateTime = date.atTime(12, 0);
+
+        boolean exists = eventRepository.existsByStartDateTimeAndEventType(
+                startDateTime,
                 "REGULAR");
 
         if (exists) {
@@ -45,9 +49,9 @@ public class RegularEventGenerator implements CommandLineRunner {
 
         Event event = new Event();
         event.setTitle("通常練習");
-        event.setEventDate(date);
-        event.setStartTime(LocalTime.of(9, 0));
-        event.setEndTime(LocalTime.of(12, 0));
+        event.setStartDateTime(startDateTime);
+        event.setEndDateTime(endDateTime);
+        event.setIsAllDay(false);
         event.setLocation("荒川河川敷");
         event.setEventType("REGULAR");
 
