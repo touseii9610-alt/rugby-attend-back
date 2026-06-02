@@ -2,6 +2,7 @@ package com.rugby.attend.controller;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.time.LocalDateTime;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,8 +33,8 @@ public class EventController {
         @GetMapping("/api/events")
         public List<EventResponse> getEvents() {
                 return eventRepository
-                                .findByEventDateGreaterThanEqualOrderByEventDateAsc(
-                                                LocalDate.now())
+                                .findByStartDateTimeGreaterThanEqualOrderByStartDateTimeAsc(
+                                                LocalDate.now().atStartOfDay())
                                 .stream()
                                 .map(event -> new EventResponse(
                                                 event.getId(),

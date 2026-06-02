@@ -13,6 +13,6 @@ public interface EventRepository extends JpaRepository<Event, Long> {
             LocalDateTime startDateTime,
             String eventType);
 
-    List<Event> findByEventDateGreaterThanEqualOrderByEventDateAsc(
-            LocalDate eventDate);
+    List<Event> findByStartDateTimeGreaterThanEqualOrderByStartDateTimeAsc(
+            LocalDateTime startDateTime);
 }
