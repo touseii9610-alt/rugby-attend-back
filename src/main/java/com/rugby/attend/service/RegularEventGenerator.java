@@ -22,7 +22,7 @@ public class RegularEventGenerator implements CommandLineRunner {
     @Override
     public void run(String... args) {
         LocalDate today = LocalDate.now();
-        LocalDate endDate = today.plusDays(60);
+        LocalDate endDate = today.plusDays(180);
 
         LocalDate targetDate = today;
 
